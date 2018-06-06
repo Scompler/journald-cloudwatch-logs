@@ -1,7 +1,6 @@
 package main
 
 import (
-	"encoding/json"
 	"fmt"
 	"time"
 
@@ -137,6 +136,6 @@ func synthRecord(err error) Record {
 	return Record{
 		Command:  "journald-cloudwatch-logs",
 		Priority: ERROR,
-		Message:  json.RawMessage(err.Error()),
+		Message:  err.Error(),
 	}
 }
